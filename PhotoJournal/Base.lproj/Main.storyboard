@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14460.31" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
-    <device id="retina4_7" orientation="portrait">
+    <device id="retina5_9" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
     <dependencies>
@@ -15,14 +15,14 @@
             <objects>
                 <viewController id="BYZ-38-t0r" customClass="PhotoJournalViewController" customModule="PhotoJournal" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="812"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="gfb-h9-L8z">
-                                <rect key="frame" x="0.0" y="29" width="375" height="330"/>
+                                <rect key="frame" x="0.0" y="53" width="375" height="594"/>
                                 <color key="backgroundColor" red="0.61400993039999996" green="0.68999487479999999" blue="0.84340592619999999" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                 <constraints>
-                                    <constraint firstAttribute="height" constant="330" id="sEV-G9-mQa"/>
+                                    <constraint firstAttribute="height" constant="594" id="sEV-G9-mQa"/>
                                 </constraints>
                                 <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="10" minimumInteritemSpacing="10" id="SO7-5j-Qta">
                                     <size key="itemSize" width="375" height="310"/>
@@ -39,13 +39,13 @@
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="Yza-98-hXi">
-                                                    <rect key="frame" x="16" y="36" width="343" height="150"/>
+                                                    <rect key="frame" x="16" y="60" width="343" height="150"/>
                                                     <constraints>
                                                         <constraint firstAttribute="height" constant="150" id="uZJ-V0-10p"/>
                                                     </constraints>
                                                 </imageView>
                                                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="wEK-OD-hhw">
-                                                    <rect key="frame" x="329" y="194" width="30" height="42"/>
+                                                    <rect key="frame" x="329" y="218" width="30" height="42"/>
                                                     <fontDescription key="fontDescription" type="boldSystem" pointSize="25"/>
                                                     <state key="normal" title=". . .">
                                                         <color key="titleColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -88,20 +88,31 @@
                                     </collectionViewCell>
                                 </cells>
                             </collectionView>
+                            <toolbar opaque="NO" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="4JO-9d-dwf">
+                                <rect key="frame" x="0.0" y="685" width="375" height="44"/>
+                                <items>
+                                    <barButtonItem style="plain" systemItem="flexibleSpace" id="WH9-3q-IvD"/>
+                                    <barButtonItem systemItem="add" id="Gi4-5n-HkK">
+                                        <connections>
+                                            <segue destination="e8V-Sh-ZZa" kind="presentation" id="tpx-hO-cmW"/>
+                                        </connections>
+                                    </barButtonItem>
+                                    <barButtonItem style="plain" systemItem="flexibleSpace" id="oGU-bb-Any"/>
+                                </items>
+                            </toolbar>
                         </subviews>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
+                            <constraint firstItem="4JO-9d-dwf" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="2K7-vk-4Vd"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="gfb-h9-L8z" secondAttribute="trailing" id="2o8-e3-8cR"/>
+                            <constraint firstItem="4JO-9d-dwf" firstAttribute="bottom" secondItem="6Tk-OE-BBY" secondAttribute="bottom" id="aDs-JA-xSB"/>
+                            <constraint firstItem="4JO-9d-dwf" firstAttribute="trailing" secondItem="6Tk-OE-BBY" secondAttribute="trailing" id="axb-9q-10T"/>
                             <constraint firstItem="gfb-h9-L8z" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="9" id="owX-04-g9m"/>
                             <constraint firstItem="gfb-h9-L8z" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="rd4-VT-D2I"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                     </view>
-                    <toolbarItems>
-                        <barButtonItem style="plain" systemItem="flexibleSpace" id="lUe-dM-FMo"/>
-                        <barButtonItem systemItem="add" id="Qs0-SE-E1Y"/>
-                        <barButtonItem style="plain" systemItem="flexibleSpace" id="BZK-4m-dwP"/>
-                    </toolbarItems>
+                    <toolbarItems/>
                     <simulatedToolbarMetrics key="simulatedBottomBarMetrics"/>
                     <connections>
                         <outlet property="imageCollectionView" destination="gfb-h9-L8z" id="uYA-aP-lZe"/>
@@ -109,26 +120,34 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="309.60000000000002" y="117.39130434782609"/>
+            <point key="canvasLocation" x="309.60000000000002" y="116.74876847290641"/>
         </scene>
         <!--Photo Journal Detail View Controller-->
         <scene sceneID="Akz-ZV-LLe">
             <objects>
                 <viewController id="e8V-Sh-ZZa" customClass="PhotoJournalDetailViewController" customModule="PhotoJournal" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="hwD-LG-hLl">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="812"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <toolbar opaque="NO" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="E5U-E4-z1R">
-                                <rect key="frame" x="0.0" y="20" width="375" height="44"/>
+                                <rect key="frame" x="0.0" y="44" width="375" height="44"/>
                                 <items>
-                                    <barButtonItem title="Cancel" id="vUG-4h-quM"/>
+                                    <barButtonItem title="Cancel" id="vUG-4h-quM">
+                                        <connections>
+                                            <action selector="cancelButtonPressed:" destination="e8V-Sh-ZZa" id="yg6-qo-8TN"/>
+                                        </connections>
+                                    </barButtonItem>
                                     <barButtonItem style="plain" systemItem="flexibleSpace" id="dc2-BR-dlE"/>
-                                    <barButtonItem title="Save" id="e6F-q4-DGf"/>
+                                    <barButtonItem title="Save" id="e6F-q4-DGf">
+                                        <connections>
+                                            <action selector="saveButtonPressed:" destination="e8V-Sh-ZZa" id="TuX-Sr-7MQ"/>
+                                        </connections>
+                                    </barButtonItem>
                                 </items>
                             </toolbar>
                             <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="m4j-3N-qJL">
-                                <rect key="frame" x="0.0" y="64" width="375" height="200"/>
+                                <rect key="frame" x="0.0" y="88" width="375" height="200"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="200" id="3tp-cs-0uh"/>
@@ -138,8 +157,20 @@
                                 <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
                             </textView>
                             <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="EQb-6v-8rC">
-                                <rect key="frame" x="0.0" y="264" width="375" height="359"/>
+                                <rect key="frame" x="0.0" y="288" width="375" height="407"/>
                             </imageView>
+                            <toolbar opaque="NO" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Mcm-Lo-Aw2">
+                                <rect key="frame" x="0.0" y="685" width="375" height="44"/>
+                                <items>
+                                    <barButtonItem title="Photo Library" id="eCh-bN-zHC">
+                                        <connections>
+                                            <action selector="photoLibraryPressed:" destination="e8V-Sh-ZZa" id="1Sq-BX-mH9"/>
+                                        </connections>
+                                    </barButtonItem>
+                                    <barButtonItem style="plain" systemItem="flexibleSpace" id="sko-OE-Yxr"/>
+                                    <barButtonItem systemItem="camera" id="lNH-Rq-lX2"/>
+                                </items>
+                            </toolbar>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
@@ -148,24 +179,31 @@
                             <constraint firstItem="m4j-3N-qJL" firstAttribute="top" secondItem="E5U-E4-z1R" secondAttribute="bottom" id="9Pv-sf-4Yb"/>
                             <constraint firstItem="EQb-6v-8rC" firstAttribute="leading" secondItem="sST-3G-bQZ" secondAttribute="leading" id="BJZ-bZ-slJ"/>
                             <constraint firstItem="E5U-E4-z1R" firstAttribute="top" secondItem="sST-3G-bQZ" secondAttribute="top" id="IUH-mV-A6m"/>
+                            <constraint firstItem="Mcm-Lo-Aw2" firstAttribute="trailing" secondItem="sST-3G-bQZ" secondAttribute="trailing" id="WLF-EM-dtK"/>
                             <constraint firstItem="sST-3G-bQZ" firstAttribute="trailing" secondItem="EQb-6v-8rC" secondAttribute="trailing" id="ZZU-Cu-aSa"/>
                             <constraint firstItem="EQb-6v-8rC" firstAttribute="top" secondItem="m4j-3N-qJL" secondAttribute="bottom" id="Zyx-Sc-kcB"/>
+                            <constraint firstItem="Mcm-Lo-Aw2" firstAttribute="leading" secondItem="sST-3G-bQZ" secondAttribute="leading" id="gID-NS-iWb"/>
+                            <constraint firstItem="Mcm-Lo-Aw2" firstAttribute="bottom" secondItem="sST-3G-bQZ" secondAttribute="bottom" id="mqJ-OU-zL1"/>
                             <constraint firstItem="E5U-E4-z1R" firstAttribute="trailing" secondItem="sST-3G-bQZ" secondAttribute="trailing" id="ont-ml-HTq"/>
                             <constraint firstItem="sST-3G-bQZ" firstAttribute="trailing" secondItem="m4j-3N-qJL" secondAttribute="trailing" id="pM4-8G-A9W"/>
-                            <constraint firstItem="sST-3G-bQZ" firstAttribute="bottom" secondItem="EQb-6v-8rC" secondAttribute="bottom" id="vym-MF-Mnv"/>
+                            <constraint firstItem="sST-3G-bQZ" firstAttribute="bottom" secondItem="EQb-6v-8rC" secondAttribute="bottom" constant="34" id="vym-MF-Mnv"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="sST-3G-bQZ"/>
                     </view>
-                    <toolbarItems>
-                        <barButtonItem title="Photo Library" id="unA-qP-tJz"/>
-                        <barButtonItem width="256" style="plain" systemItem="fixedSpace" id="Bp4-Yh-x49"/>
-                        <barButtonItem systemItem="camera" id="HGH-un-Stc"/>
-                    </toolbarItems>
+                    <toolbarItems/>
                     <simulatedToolbarMetrics key="simulatedBottomBarMetrics"/>
+                    <connections>
+                        <outlet property="cameraButton" destination="lNH-Rq-lX2" id="irc-3a-4Ue"/>
+                        <outlet property="cancelButton" destination="vUG-4h-quM" id="MjN-Hy-fc4"/>
+                        <outlet property="detailPhotoImage" destination="EQb-6v-8rC" id="Ipu-Y5-MGq"/>
+                        <outlet property="photoLibrary" destination="eCh-bN-zHC" id="Bs8-e4-auq"/>
+                        <outlet property="photoTextView" destination="m4j-3N-qJL" id="cem-nF-qCV"/>
+                        <outlet property="saveButton" destination="e6F-q4-DGf" id="z7R-rr-rNN"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="5W7-Zz-Hge" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1089" y="117"/>
+            <point key="canvasLocation" x="1088.8" y="116.74876847290641"/>
         </scene>
     </scenes>
 </document>

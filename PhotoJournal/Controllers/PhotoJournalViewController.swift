@@ -12,20 +12,25 @@ class PhotoJournalViewController: UIViewController {
     
     @IBOutlet weak var imageCollectionView: UICollectionView!
     
-    var photoJournal = PhotoJournalModel.getPhotoJournal()
+    var photoJournal = [PhotoJournal]()
     
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        
+        imageCollectionView.dataSource = self
     }
     
-    func uploadData() {
-        
+}
+
+extension PhotoJournalViewController: UICollectionViewDataSource {
+    func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
+        return photoJournal.count
     }
     
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        <#code#>
+    func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
+        
+        
+        return UICollectionViewCell()
     }
     
     

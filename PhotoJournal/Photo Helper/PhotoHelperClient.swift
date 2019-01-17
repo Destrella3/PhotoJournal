@@ -8,7 +8,7 @@
 
 import Foundation
 
-final class PhotoJournalModel {
+final class PhotoHelperClient {
     private static let filename = "PhototJournalList.plist"
     
     private init() {}
@@ -41,4 +41,5 @@ final class PhotoJournalModel {
         }
         return photoJournal
     }
+    
 }
