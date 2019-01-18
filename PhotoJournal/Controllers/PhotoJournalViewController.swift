@@ -37,7 +37,7 @@ extension PhotoJournalViewController: UICollectionViewDataSource {
         let photoToSet = photoJournal[indexPath.row]
         cell.photoTitle.text = photoToSet.descritpion
         cell.photoDate.text = photoToSet.createdAt
-        
+        cell.photoImage.image = UIImage(data: photoToSet.imageData)
         return cell
     }
     

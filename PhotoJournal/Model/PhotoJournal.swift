@@ -12,5 +12,4 @@ struct PhotoJournal: Codable {
     let createdAt: String
     let imageData: Data
     let descritpion: String
-//    let title: String
 }
