@@ -24,7 +24,7 @@ class PhotoJournalDetailViewController: UIViewController {
         super.viewDidLoad()
         setupImagePickerViewController()
     }
-
+    
     private func setupImagePickerViewController() {
         imagePickerViewContoller = UIImagePickerController()
         imagePickerViewContoller.delegate = self
@@ -32,11 +32,11 @@ class PhotoJournalDetailViewController: UIViewController {
             cameraButton.isEnabled = false
         }
     }
-
+    
     @IBAction func cancelButtonPressed(_ sender: UIBarButtonItem) {
         dismiss(animated: true, completion: nil)
     }
-
+    
     @IBAction func saveButtonPressed(_ sender: UIBarButtonItem) {
         guard let photoDescription = photoTextView.text else {return }
         let date = Date()
@@ -47,23 +47,23 @@ class PhotoJournalDetailViewController: UIViewController {
                                           .withTimeZone,
                                           .withDashSeparatorInDate]
         let timestamp = isoDateFormatter.string(from: date)
-
+        
         if let imagedata = detailPhotoImage.image?.jpegData(compressionQuality: 0.5) {
-
+            
             let photoPost = PhotoJournal.init(createdAt: timestamp, imageData: imagedata, descritpion: photoDescription)
             let item = ItemModel.init(image: imagedata, description: photoDescription, createdAt: timestamp)
-
+            
             PhotoHelperClient.addItem(item: photoPost)
             PhotoHelperClient.save()
             print(item)
-
-        dismiss(animated: true, completion: nil)
-    }
+            
+            dismiss(animated: true, completion: nil)
+        }
     }
     private func showLibrayPhoto() {
         present(imagePickerViewContoller, animated: true, completion: nil)
     }
-
+    
     @IBAction func photoLibraryPressed(_ sender: UIBarButtonItem) {
         showLibrayPhoto()
     }
@@ -77,11 +77,11 @@ class PhotoJournalDetailViewController: UIViewController {
 }
 
 extension PhotoJournalDetailViewController: UIImagePickerControllerDelegate, UINavigationControllerDelegate {
-
+    
     func imagePickerControllerDidCancel(_ picker: UIImagePickerController) {
         dismiss(animated: true, completion: nil)
     }
-
+    
     func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [UIImagePickerController.InfoKey : Any]) {
         if let image = info[UIImagePickerController.InfoKey.originalImage] as? UIImage {
             detailPhotoImage.image = image
@@ -90,7 +90,7 @@ extension PhotoJournalDetailViewController: UIImagePickerControllerDelegate, UIN
             print("original image is nil")
         }
         dismiss(animated: true, completion: nil)
-
+        
     }
 }
 

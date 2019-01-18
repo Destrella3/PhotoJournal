@@ -50,6 +50,9 @@
                                                     <state key="normal" title=". . .">
                                                         <color key="titleColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                     </state>
+                                                    <connections>
+                                                        <action selector="actionSheet:" destination="BYZ-38-t0r" eventType="touchUpInside" id="i8Q-RK-rt3"/>
+                                                    </connections>
                                                 </button>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Date" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="IZ7-sv-6Vg">
                                                     <rect key="frame" x="16" y="281" width="343" height="21"/>
@@ -80,7 +83,7 @@
                                             <constraint firstAttribute="trailingMargin" secondItem="IZ7-sv-6Vg" secondAttribute="trailing" constant="8" id="nLt-dN-0q1"/>
                                         </constraints>
                                         <connections>
-                                            <outlet property="optionButton" destination="wEK-OD-hhw" id="Ook-xn-gA2"/>
+                                            <outlet property="optionButton" destination="wEK-OD-hhw" id="DSB-2Y-v9a"/>
                                             <outlet property="photoDate" destination="IZ7-sv-6Vg" id="hVa-wq-IIB"/>
                                             <outlet property="photoImage" destination="Yza-98-hXi" id="jLU-dY-uAQ"/>
                                             <outlet property="photoTitle" destination="M4s-4a-dXL" id="tfQ-4e-d1e"/>

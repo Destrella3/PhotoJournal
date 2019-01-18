@@ -12,9 +12,8 @@ class PhotoJournalViewController: UIViewController {
     
     @IBOutlet weak var imageCollectionView: UICollectionView!
     
+    
     var photoJournal = [PhotoJournal]()
-    
-    
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -23,6 +22,15 @@ class PhotoJournalViewController: UIViewController {
         print(photoJournal.count)
         print(DataPersistenceManager.documentsDirectory())
         print(photoJournal.count)
+    }
+    
+    
+    @IBAction func actionSheet(_ sender: UIButton) {
+        let alert = UIAlertController(title: "Option", message: "", preferredStyle: .actionSheet)
+        alert.addAction(UIAlertAction.init(title: "Edit", style: .destructive, handler: nil))
+       alert.addAction(UIAlertAction.init(title: "Delete", style: .destructive, handler: nil))
+        alert.addAction(UIAlertAction.init(title: "Share", style: .destructive, handler: nil))
+        present(alert, animated: true, completion: nil)
     }
     
 }
@@ -40,6 +48,5 @@ extension PhotoJournalViewController: UICollectionViewDataSource {
         cell.photoImage.image = UIImage(data: photoToSet.imageData)
         return cell
     }
-    
     
 }
