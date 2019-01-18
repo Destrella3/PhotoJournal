@@ -31,7 +31,7 @@
                                     <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
                                 </collectionViewFlowLayout>
                                 <cells>
-                                    <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" id="GNu-0f-8x3" customClass="PhotoJournalCollectionViewCell" customModule="PhotoJournal" customModuleProvider="target">
+                                    <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="PhotoCell" id="GNu-0f-8x3" customClass="PhotoJournalCollectionViewCell" customModule="PhotoJournal" customModuleProvider="target">
                                         <rect key="frame" x="0.0" y="0.0" width="375" height="310"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                         <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO">
@@ -146,18 +146,17 @@
                                     </barButtonItem>
                                 </items>
                             </toolbar>
-                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="m4j-3N-qJL">
+                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" text="Description" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="m4j-3N-qJL">
                                 <rect key="frame" x="0.0" y="88" width="375" height="200"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="200" id="3tp-cs-0uh"/>
                                 </constraints>
-                                <string key="text">Lorem ipsum dolor sit er elit lamet, consectetaur cillium adipisicing pecu, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. Nam liber te conscient to factor tum poen legum odioque civiuda.</string>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
                             </textView>
                             <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="EQb-6v-8rC">
-                                <rect key="frame" x="0.0" y="288" width="375" height="407"/>
+                                <rect key="frame" x="0.0" y="288" width="375" height="397"/>
                             </imageView>
                             <toolbar opaque="NO" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Mcm-Lo-Aw2">
                                 <rect key="frame" x="0.0" y="685" width="375" height="44"/>
@@ -177,16 +176,16 @@
                             <constraint firstItem="m4j-3N-qJL" firstAttribute="leading" secondItem="sST-3G-bQZ" secondAttribute="leading" id="2Hv-V4-d1X"/>
                             <constraint firstItem="E5U-E4-z1R" firstAttribute="leading" secondItem="sST-3G-bQZ" secondAttribute="leading" id="7Iv-tW-B5A"/>
                             <constraint firstItem="m4j-3N-qJL" firstAttribute="top" secondItem="E5U-E4-z1R" secondAttribute="bottom" id="9Pv-sf-4Yb"/>
-                            <constraint firstItem="EQb-6v-8rC" firstAttribute="leading" secondItem="sST-3G-bQZ" secondAttribute="leading" id="BJZ-bZ-slJ"/>
                             <constraint firstItem="E5U-E4-z1R" firstAttribute="top" secondItem="sST-3G-bQZ" secondAttribute="top" id="IUH-mV-A6m"/>
+                            <constraint firstItem="EQb-6v-8rC" firstAttribute="trailing" secondItem="Mcm-Lo-Aw2" secondAttribute="trailing" id="R1B-Wa-vcH"/>
+                            <constraint firstItem="EQb-6v-8rC" firstAttribute="bottom" secondItem="Mcm-Lo-Aw2" secondAttribute="top" id="VEi-Q7-egM"/>
                             <constraint firstItem="Mcm-Lo-Aw2" firstAttribute="trailing" secondItem="sST-3G-bQZ" secondAttribute="trailing" id="WLF-EM-dtK"/>
-                            <constraint firstItem="sST-3G-bQZ" firstAttribute="trailing" secondItem="EQb-6v-8rC" secondAttribute="trailing" id="ZZU-Cu-aSa"/>
-                            <constraint firstItem="EQb-6v-8rC" firstAttribute="top" secondItem="m4j-3N-qJL" secondAttribute="bottom" id="Zyx-Sc-kcB"/>
+                            <constraint firstItem="EQb-6v-8rC" firstAttribute="top" secondItem="m4j-3N-qJL" secondAttribute="bottom" id="Yxz-Av-JWK"/>
                             <constraint firstItem="Mcm-Lo-Aw2" firstAttribute="leading" secondItem="sST-3G-bQZ" secondAttribute="leading" id="gID-NS-iWb"/>
                             <constraint firstItem="Mcm-Lo-Aw2" firstAttribute="bottom" secondItem="sST-3G-bQZ" secondAttribute="bottom" id="mqJ-OU-zL1"/>
                             <constraint firstItem="E5U-E4-z1R" firstAttribute="trailing" secondItem="sST-3G-bQZ" secondAttribute="trailing" id="ont-ml-HTq"/>
                             <constraint firstItem="sST-3G-bQZ" firstAttribute="trailing" secondItem="m4j-3N-qJL" secondAttribute="trailing" id="pM4-8G-A9W"/>
-                            <constraint firstItem="sST-3G-bQZ" firstAttribute="bottom" secondItem="EQb-6v-8rC" secondAttribute="bottom" constant="34" id="vym-MF-Mnv"/>
+                            <constraint firstItem="EQb-6v-8rC" firstAttribute="leading" secondItem="Mcm-Lo-Aw2" secondAttribute="leading" id="wjl-CN-Jyr"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="sST-3G-bQZ"/>
                     </view>

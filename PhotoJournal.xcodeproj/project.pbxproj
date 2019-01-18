@@ -16,7 +16,7 @@
 		62ABA56621EEA34D0067973E /* PhotoHelperClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = 62ABA56521EEA34D0067973E /* PhotoHelperClient.swift */; };
 		62ABA56921EEA38E0067973E /* PhotoJournal.swift in Sources */ = {isa = PBXBuildFile; fileRef = 62ABA56821EEA38E0067973E /* PhotoJournal.swift */; };
 		62ABA56C21EEA3EC0067973E /* DataPersistenceManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 62ABA56B21EEA3EC0067973E /* DataPersistenceManager.swift */; };
-		62ABA56E21EEA5FE0067973E /* Date.swift in Sources */ = {isa = PBXBuildFile; fileRef = 62ABA56D21EEA5FE0067973E /* Date.swift */; };
+		62ABA56E21EEA5FE0067973E /* ItemModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 62ABA56D21EEA5FE0067973E /* ItemModel.swift */; };
 		62ABA57021EEB3910067973E /* PhotoJournalCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 62ABA56F21EEB3910067973E /* PhotoJournalCollectionViewCell.swift */; };
 /* End PBXBuildFile section */
 
@@ -32,7 +32,7 @@
 		62ABA56521EEA34D0067973E /* PhotoHelperClient.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhotoHelperClient.swift; sourceTree = "<group>"; };
 		62ABA56821EEA38E0067973E /* PhotoJournal.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhotoJournal.swift; sourceTree = "<group>"; };
 		62ABA56B21EEA3EC0067973E /* DataPersistenceManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataPersistenceManager.swift; sourceTree = "<group>"; };
-		62ABA56D21EEA5FE0067973E /* Date.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Date.swift; sourceTree = "<group>"; };
+		62ABA56D21EEA5FE0067973E /* ItemModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ItemModel.swift; sourceTree = "<group>"; };
 		62ABA56F21EEB3910067973E /* PhotoJournalCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhotoJournalCollectionViewCell.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -99,7 +99,6 @@
 		62ABA56721EEA3520067973E /* Model */ = {
 			isa = PBXGroup;
 			children = (
-				62ABA56D21EEA5FE0067973E /* Date.swift */,
 				62ABA56821EEA38E0067973E /* PhotoJournal.swift */,
 			);
 			path = Model;
@@ -110,6 +109,7 @@
 			children = (
 				62ABA56B21EEA3EC0067973E /* DataPersistenceManager.swift */,
 				62ABA56521EEA34D0067973E /* PhotoHelperClient.swift */,
+				62ABA56D21EEA5FE0067973E /* ItemModel.swift */,
 			);
 			path = "Photo Helper";
 			sourceTree = "<group>";
@@ -195,7 +195,7 @@
 			files = (
 				62ABA56921EEA38E0067973E /* PhotoJournal.swift in Sources */,
 				62ABA56621EEA34D0067973E /* PhotoHelperClient.swift in Sources */,
-				62ABA56E21EEA5FE0067973E /* Date.swift in Sources */,
+				62ABA56E21EEA5FE0067973E /* ItemModel.swift in Sources */,
 				62ABA57021EEB3910067973E /* PhotoJournalCollectionViewCell.swift in Sources */,
 				62ABA55121EE3AF20067973E /* PhotoJournalDetailViewController.swift in Sources */,
 				62ABA56C21EEA3EC0067973E /* DataPersistenceManager.swift in Sources */,

@@ -1,5 +1,5 @@
 //
-//  Date.swift
+//  ItemModel.swift
 //  PhotoJournal
 //
 //  Created by Diego Estrella III on 1/15/19.
@@ -8,8 +8,8 @@
 
 import Foundation
 
-struct CurrentDate: Codable {
-    let title: String
+struct ItemModel: Codable {
+    let image: Data
     let description: String
     let createdAt: String
     public var dateFormattedString: String {
@@ -30,4 +30,7 @@ struct CurrentDate: Codable {
         }
         return formattedDate
     }
+    
 }
+
+

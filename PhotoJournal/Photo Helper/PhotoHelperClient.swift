@@ -10,26 +10,14 @@ import Foundation
 
 final class PhotoHelperClient {
     private static let filename = "PhototJournalList.plist"
+    private static var items = [PhotoJournal]()
     
-    private init() {}
-    
-    static func savePhotoJournal(photoJournal: PhotoJournal) {
-        let path = DataPersistenceManager.filepathToDocumentsDirectory(filename: filename)
-        do {
-            let data = try PropertyListEncoder().encode(photoJournal)
-            try data.write(to: path, options: Data.WritingOptions.atomic)
-        } catch {
-            print("property list encoding error: \(error)")
-        }
-    }
-    
-    static func getPhotoJournal() -> PhotoJournal? {
+    static func getPhotoJournal() -> [PhotoJournal]{
         let path  = DataPersistenceManager.filepathToDocumentsDirectory(filename: filename).path
-        var photoJournal: PhotoJournal?
         if FileManager.default.fileExists(atPath: path) {
             if let data = FileManager.default.contents(atPath: path) {
                 do {
-                    photoJournal = try PropertyListDecoder().decode(PhotoJournal.self, from: data)
+                    items = try PropertyListDecoder().decode([PhotoJournal].self, from: data)
                 } catch {
                     print("property list decoding error: \(error)")
                 }
@@ -39,7 +27,26 @@ final class PhotoHelperClient {
         } else {
             print("\(filename) does not exist")
         }
-        return photoJournal
+        return items
     }
     
+    static func addItem(item: PhotoJournal) {
+        items.append(item)
+        save()
+    }
+    
+    static func delete(item: ItemModel, atindex index: Int) {
+        items.remove(at: index)
+        save()
+    }
+    
+    static func save() {
+        let path = DataPersistenceManager.filepathToDocumentsDirectory(filename: filename)
+        do {
+            let data = try PropertyListEncoder().encode(items)
+            try data.write(to: path, options: Data.WritingOptions.atomic)
+        } catch {
+            print("property list encoding error: \(error)")
+        }
+    }
 }

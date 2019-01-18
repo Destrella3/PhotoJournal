@@ -15,9 +15,14 @@ class PhotoJournalViewController: UIViewController {
     var photoJournal = [PhotoJournal]()
     
     
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         imageCollectionView.dataSource = self
+        photoJournal = PhotoHelperClient.getPhotoJournal()
+        print(photoJournal.count)
+        print(DataPersistenceManager.documentsDirectory())
+        print(photoJournal.count)
     }
     
 }
@@ -28,9 +33,12 @@ extension PhotoJournalViewController: UICollectionViewDataSource {
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
+        guard let cell = imageCollectionView.dequeueReusableCell(withReuseIdentifier: "PhotoCell", for: indexPath) as? PhotoJournalCollectionViewCell else { return UICollectionViewCell() }
+        let photoToSet = photoJournal[indexPath.row]
+        cell.photoTitle.text = photoToSet.descritpion
+        cell.photoDate.text = photoToSet.createdAt
         
-        
-        return UICollectionViewCell()
+        return cell
     }
     
     
